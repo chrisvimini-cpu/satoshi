@@ -1,0 +1,37 @@
+/* CoinDesk Family Font - loaded from /public/fonts/ */
+/* These will gracefully fall back to Helvetica Neue/Arial if font files aren't present */
+
+@font-face {
+  font-family: 'Family';
+  src: url('/fonts/Family-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Family';
+  src: url('/fonts/Family-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* If additional weights are provided later, add them here: */
+/*
+@font-face {
+  font-family: 'Family';
+  src: url('/fonts/Family-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Family';
+  src: url('/fonts/Family-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+*/

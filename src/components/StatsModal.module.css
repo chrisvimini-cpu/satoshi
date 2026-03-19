@@ -1,0 +1,218 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: var(--z-modal);
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal {
+  background-color: var(--color-white);
+  border-radius: 8px;
+  padding: var(--spacing-xl);
+  max-width: 500px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.3s ease-out;
+  font-family: var(--font-family);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.header h2 {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  margin: 0;
+  color: var(--color-text);
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: var(--color-dark-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.closeButton:hover {
+  color: var(--color-text);
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: var(--spacing-xl);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 1px solid var(--color-medium-gray);
+}
+
+.stat {
+  text-align: center;
+}
+
+.statValue {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.statLabel {
+  font-size: 12px;
+  color: var(--color-dark-gray);
+  text-transform: uppercase;
+}
+
+.distribution {
+  margin-bottom: var(--spacing-xl);
+}
+
+.distribution h3 {
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  margin: 0 0 var(--spacing-md) 0;
+  color: var(--color-text);
+}
+
+.distributionBars {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.barRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.barLabel {
+  font-weight: 700;
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+  min-width: 12px;
+}
+
+.bar {
+  background-color: var(--color-dark-gray);
+  min-width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 6px;
+  border-radius: 2px;
+  transition: width 0.5s ease;
+}
+
+.barCurrent {
+  background-color: var(--color-coindesk-yellow);
+}
+
+.barCount {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-white);
+}
+
+.nextWord {
+  text-align: center;
+  padding: var(--spacing-lg) 0;
+  border-top: 1px solid var(--color-medium-gray);
+  margin-bottom: var(--spacing-md);
+}
+
+.nextWordLabel {
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 8px;
+}
+
+.countdown {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--color-text);
+  font-variant-numeric: tabular-nums;
+}
+
+.shareButton {
+  width: 100%;
+  padding: 16px;
+  background-color: var(--color-coindesk-yellow);
+  color: var(--color-text);
+  border: none;
+  border-radius: 4px;
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.1s ease;
+}
+
+.shareButton:hover {
+  transform: scale(1.02);
+}
+
+.shareButton:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 480px) {
+  .modal {
+    padding: var(--spacing-lg);
+  }
+
+  .statValue {
+    font-size: 28px;
+  }
+
+  .statLabel {
+    font-size: 11px;
+  }
+
+  .countdown {
+    font-size: 24px;
+  }
+}
