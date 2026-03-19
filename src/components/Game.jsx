@@ -190,14 +190,11 @@ const Game = () => {
         <div className={styles.headerLeft}>
           <h1 className={styles.title}>Satoshi</h1>
           <span className={styles.byLine}>by</span>
-          <div className={styles.logo}>
-            {/* CoinDesk logo SVG - fallback to text if SVG not present */}
-            <svg width="20" height="20" viewBox="0 0 100 100" fill="none">
-              <circle cx="50" cy="50" r="45" fill="#F8BF1E"/>
-              <path d="M50 20C33.43 20 20 33.43 20 50C20 66.57 33.43 80 50 80C66.57 80 80 66.57 80 50C80 33.43 66.57 20 50 20ZM50 72C37.85 72 28 62.15 28 50C28 37.85 37.85 28 50 28C62.15 28 72 37.85 72 50C72 62.15 62.15 72 50 72Z" fill="#000"/>
-            </svg>
-            <span className={styles.logoText}>CoinDesk</span>
-          </div>
+          <img
+            src="/coindesk-logo.svg"
+            alt="CoinDesk"
+            className={styles.logo}
+          />
         </div>
         <div className={styles.headerRight}>
           <button
