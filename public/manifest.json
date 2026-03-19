@@ -1,0 +1,17 @@
+{
+  "name": "Satoshi - Daily Crypto Word Game",
+  "short_name": "Satoshi",
+  "description": "A daily 5-letter crypto word game by CoinDesk",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#F8BF1E",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+.tile {
+  width: var(--tile-size);
+  height: var(--tile-size);
+  border: var(--tile-border-empty);
+  border-radius: var(--tile-radius);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--font-size-tile);
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--tile-text-empty);
+  background-color: var(--tile-bg-empty);
+  position: relative;
+  user-select: none;
+  transition: border-color 0.1s ease;
+}
+
+/* Filled state (user has typed a letter, not yet submitted) */
+.tile.filled {
+  border: var(--tile-border-filled);
+  color: var(--tile-text-filled);
+  animation: pop 100ms ease-in-out;
+}
+
+/* Revealed states */
+.tile.correct,
+.tile.present,
+.tile.absent {
+  border: none;
+  color: var(--tile-text-revealed);
+}
+
+.tile.correct {
+  background-color: var(--tile-bg-correct);
+}
+
+.tile.present {
+  background-color: var(--tile-bg-present);
+}
+
+.tile.absent {
+  background-color: var(--tile-bg-absent);
+}
+
+/* Flip animation structure */
+.tileFront,
+.tileBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+  border-radius: var(--tile-radius);
+}
+
+.tileBack {
+  transform: rotateX(180deg);
+}
+
+/* Flip animation */
+.tile.flip {
+  animation: flip var(--flip-duration) ease-in-out;
+}
+
+@keyframes flip {
+  0% {
+    transform: rotateX(0);
+  }
+  50% {
+    transform: rotateX(90deg);
+  }
+  100% {
+    transform: rotateX(0);
+  }
+}
+
+/* Pop animation when typing */
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Bounce animation for winning row */
+.tile.bounce {
+  animation: bounce var(--bounce-duration) ease-in-out;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-20px);
+  }
+  40% {
+    transform: translateY(5px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+  80% {
+    transform: translateY(2px);
+  }
+}

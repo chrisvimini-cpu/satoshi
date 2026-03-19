@@ -1,0 +1,90 @@
+:root {
+  /* CoinDesk Brand Colors */
+  --color-coindesk-yellow: #F8BF1E;
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+  --color-light-gray: #F5F5F5;
+  --color-medium-gray: #D3D6DA;
+  --color-dark-gray: #787C7E;
+  --color-charcoal: #787C7E;
+  --color-warm-amber: #C9A836;
+  --color-border-empty: #D3D6DA;
+  --color-border-filled: #878A8C;
+  --color-text: #1A1A1B;
+
+  /* Tile States */
+  --tile-bg-empty: var(--color-white);
+  --tile-bg-filled: var(--color-white);
+  --tile-bg-correct: var(--color-coindesk-yellow);
+  --tile-bg-present: var(--color-warm-amber);
+  --tile-bg-absent: var(--color-charcoal);
+
+  --tile-text-empty: var(--color-text);
+  --tile-text-filled: var(--color-text);
+  --tile-text-revealed: var(--color-white);
+
+  --tile-border-empty: 2px solid var(--color-border-empty);
+  --tile-border-filled: 2px solid var(--color-border-filled);
+
+  /* Keyboard States */
+  --key-bg-default: var(--color-medium-gray);
+  --key-bg-correct: var(--color-coindesk-yellow);
+  --key-bg-present: var(--color-warm-amber);
+  --key-bg-absent: var(--color-charcoal);
+  --key-text-default: var(--color-text);
+  --key-text-revealed: var(--color-white);
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+  --spacing-xl: 24px;
+
+  /* Tile Dimensions */
+  --tile-size: 62px;
+  --tile-gap: 5px;
+  --tile-radius: 4px;
+
+  /* Animation Timing */
+  --flip-duration: 400ms;
+  --flip-delay: 150ms;
+  --bounce-duration: 500ms;
+  --shake-duration: 600ms;
+
+  /* Z-index layers */
+  --z-modal: 1000;
+  --z-toast: 2000;
+  --z-header: 100;
+
+  /* Typography */
+  --font-family: "Family", "Helvetica Neue", Arial, sans-serif;
+  --font-size-base: 16px;
+  --font-size-sm: 14px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+  --font-size-tile: 2rem;
+  --font-size-keyboard: 13px;
+
+  /* Header */
+  --header-height: 50px;
+  --header-border: 1px solid var(--color-border-empty);
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  :root {
+    --tile-size: 56px;
+    --tile-gap: 4px;
+    --font-size-tile: 1.75rem;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 360px) {
+  :root {
+    --tile-size: 48px;
+    --tile-gap: 4px;
+    --font-size-tile: 1.5rem;
+  }
+}
