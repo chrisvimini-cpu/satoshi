@@ -9,26 +9,65 @@
   height: var(--header-height);
   border-bottom: var(--header-border);
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 0 var(--spacing-lg);
+  padding: 0 14px;
   background-color: var(--color-white);
   z-index: var(--z-header);
+  position: relative;
 }
 
 .headerLeft {
   display: flex;
   align-items: center;
-  gap: 8px;
+  flex: 0 0 auto;
+}
+
+.headerCenter {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.headerRight {
+  display: flex;
+  gap: 4px;
+  margin-left: auto;
+}
+
+.menuButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 7px 4px;
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.menuButton:hover {
+  background-color: var(--color-light-gray);
+}
+
+.menuButton:active {
+  background-color: var(--color-medium-gray);
 }
 
 .title {
   font-family: var(--font-family);
-  font-size: var(--font-size-xl);
+  font-size: 30px;
   font-weight: 700;
   margin: 0;
   color: var(--color-text);
   letter-spacing: 0.5px;
+  line-height: normal;
 }
 
 .byLine {
@@ -36,16 +75,12 @@
   font-size: 12px;
   color: var(--color-dark-gray);
   margin: 0 2px;
+  line-height: normal;
 }
 
 .logo {
   height: 20px;
   width: auto;
-}
-
-.headerRight {
-  display: flex;
-  gap: 4px;
 }
 
 .iconButton {
@@ -57,6 +92,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 40px;
+  height: 40px;
   border-radius: 4px;
   transition: background-color 0.2s ease;
 }
@@ -71,14 +108,33 @@
 
 @media (max-width: 480px) {
   .header {
-    padding: 0 var(--spacing-sm);
+    padding: 0 8px;
   }
 
   .title {
-    font-size: var(--font-size-lg);
+    font-size: 24px;
+  }
+
+  .headerCenter {
+    gap: 3px;
+  }
+
+  .byLine {
+    font-size: 10px;
+  }
+
+  .logo {
+    height: 16px;
   }
 
   .iconButton {
     padding: 6px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .menuButton {
+    width: 28px;
+    height: 28px;
   }
 }
