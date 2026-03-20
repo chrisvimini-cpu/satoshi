@@ -343,6 +343,36 @@ Vercel will:
 4. Update your URL (same URL, new content)
 5. Complete in 1-2 minutes
 
+### Step 6: Using Vercel MCP for Deployment Management
+
+**IMPORTANT:** Always use the Vercel MCP tools to check deployment status and manage deployments. Do NOT try to use the `vercel` CLI command.
+
+**Available Vercel MCP Tools:**
+
+1. **Check deployment status** - Monitor builds and deployment state
+2. **List deployments** - View deployment history
+3. **Get build logs** - Debug build failures
+4. **Get runtime logs** - Debug production issues
+
+**Example Workflow with Claude:**
+
+```
+User: "Push and deploy live"
+
+Claude should:
+1. git add/commit/push changes
+2. Use mcp__vercel__list_teams to get team ID
+3. Use mcp__vercel__list_projects to get project ID
+4. Use mcp__vercel__list_deployments to check latest deployment
+5. Report deployment status and URL to user
+```
+
+**Why MCP instead of CLI:**
+- The Vercel CLI requires local installation and authentication
+- MCP tools are pre-authenticated through Claude Code
+- MCP provides programmatic access to deployment info
+- No need to switch between terminal and browser
+
 ---
 
 ## Troubleshooting
@@ -389,6 +419,19 @@ npm config set strict-ssl false
 
 **If on different networks:** Deploy to Vercel first, then use the Vercel URL
 
+### Vercel CLI Not Found Error
+
+**Problem:** Getting `command not found: vercel` when trying to deploy
+
+**Solution:** Don't use the Vercel CLI - use Vercel MCP tools instead!
+
+When working with Claude Code, always ask Claude to use the Vercel MCP integration:
+- ✅ "Check deployment status using MCP"
+- ✅ "Push and deploy live" (Claude will use MCP)
+- ❌ Don't try to run `vercel deploy` manually
+
+The Vercel MCP tools are pre-authenticated and provide programmatic access to all deployment functions without requiring CLI installation.
+
 ---
 
 ## Making Changes
@@ -409,9 +452,16 @@ git commit -m "Description of changes"
 # 4. Push to GitHub (triggers auto-deploy)
 git push
 
-# 5. Check Vercel
-# Visit your Vercel URL in 1-2 minutes to see changes live
+# 5. Check deployment status using Vercel MCP
+# Claude will use MCP tools to verify deployment succeeded
+# You'll get the deployment URL and status automatically
 ```
+
+**When working with Claude Code:**
+After pushing to GitHub, ask Claude to "check deployment status" or "verify it's live" - Claude will automatically use the Vercel MCP tools to:
+- Confirm the deployment succeeded
+- Provide the live URL
+- Show any build errors if deployment failed
 
 ### Updating Brand Assets
 
