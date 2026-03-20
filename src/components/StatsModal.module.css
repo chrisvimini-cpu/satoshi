@@ -47,9 +47,10 @@
 
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-bottom: var(--spacing-xl);
+  position: relative;
 }
 
 .header h2 {
@@ -57,6 +58,7 @@
   font-weight: 700;
   margin: 0;
   color: var(--color-text);
+  text-align: center;
 }
 
 .closeButton {
@@ -69,6 +71,9 @@
   align-items: center;
   justify-content: center;
   transition: color 0.2s ease;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .closeButton:hover {

@@ -7,7 +7,7 @@ const HelpModal = ({ isOpen, onClose }) => {
     <div className={styles.overlay} onClick={onClose}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
         <div className={styles.header}>
-          <h2>HOW TO PLAY</h2>
+          <h2>How to Play</h2>
           <button className={styles.closeButton} onClick={onClose} aria-label="Close">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path

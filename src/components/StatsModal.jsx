@@ -29,7 +29,7 @@ const StatsModal = ({ isOpen, onClose, stats, onShare, onRestart, gameWon, guess
     <div className={styles.overlay} onClick={onClose}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
         <div className={styles.header}>
-          <h2>STATISTICS</h2>
+          <h2>Statistics</h2>
           <button className={styles.closeButton} onClick={onClose} aria-label="Close">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path
