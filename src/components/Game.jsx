@@ -4,6 +4,7 @@ import Keyboard from './Keyboard';
 import StatsModal from './StatsModal';
 import HelpModal from './HelpModal';
 import Toast from './Toast';
+import HamburgerMenu from './HamburgerMenu';
 import {
   getTodaysWord,
   isValidWord,
@@ -28,6 +29,7 @@ const Game = () => {
   const [stats, setStats] = useState(loadStats());
   const [showStats, setShowStats] = useState(false);
   const [showHelp, setShowHelp] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
   const [toast, setToast] = useState({ message: '', visible: false });
   const [isRevealing, setIsRevealing] = useState(false);
   const [revealingRow, setRevealingRow] = useState(null);
@@ -201,6 +203,7 @@ const Game = () => {
         <div className={styles.headerLeft}>
           <button
             className={styles.menuButton}
+            onClick={() => setShowMenu(true)}
             aria-label="Menu"
           >
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -279,6 +282,8 @@ const Game = () => {
       <HelpModal isOpen={showHelp} onClose={() => setShowHelp(false)} />
 
       <Toast message={toast.message} isVisible={toast.visible} onClose={hideToast} />
+
+      <HamburgerMenu isOpen={showMenu} onClose={() => setShowMenu(false)} />
     </div>
   );
 };
