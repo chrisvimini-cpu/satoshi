@@ -182,12 +182,38 @@ const Game = () => {
     });
   };
 
+  const handleRestart = () => {
+    setCurrentGuess('');
+    setGuesses([]);
+    setEvaluations([]);
+    setGameStatus('playing');
+    setWonRow(null);
+    setShowStats(false);
+    localStorage.removeItem('gameState');
+    showToast('Game restarted');
+  };
+
   const letterStates = getKeyboardState(guesses, answer.current);
 
   return (
     <div className={styles.game}>
       <header className={styles.header}>
         <div className={styles.headerLeft}>
+          <button
+            className={styles.menuButton}
+            aria-label="Menu"
+          >
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path
+                d="M2.5 5H17.5M2.5 10H17.5M2.5 15H17.5"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+            </svg>
+          </button>
+        </div>
+        <div className={styles.headerCenter}>
           <h1 className={styles.title}>Satoshi</h1>
           <span className={styles.byLine}>by</span>
           <img
@@ -245,6 +271,7 @@ const Game = () => {
         onClose={() => setShowStats(false)}
         stats={stats}
         onShare={handleShare}
+        onRestart={handleRestart}
         gameWon={gameStatus === 'won'}
         guessCount={guesses.length}
       />
