@@ -107,6 +107,10 @@
 }
 
 @media (max-width: 480px) {
+  .game {
+    overflow-y: auto;
+  }
+
   .header {
     padding: 0 8px;
   }

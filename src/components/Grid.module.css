@@ -34,6 +34,6 @@
 @media (max-width: 480px) {
   .grid {
     padding: var(--spacing-md);
-    padding-bottom: 200px;
+    padding-bottom: 280px;
   }
 }
