@@ -13,7 +13,10 @@
   padding: 0 14px;
   background-color: var(--color-white);
   z-index: var(--z-header);
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 .headerLeft {
